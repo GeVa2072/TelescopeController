@@ -13,16 +13,18 @@
 				<Option compiler="GCC" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-x c++" />
 					<Add option="-DF_CPU=8000000L" />
 					<Add option="-DARDUSIM" />
 					<Add option="-D__AVR_ATmega2560__" />
-					<Add option="-x c++" />
 					<Add directory="$(ARDUINO_DIR)/arduino/cores" />
 					<Add directory="$(ARDUINO_DIR)/arduino/variants/standard" />
 					<Add directory="$(ARDUINO_DIR)/include" />
+					<Add directory="../ArduinoUnit" />
 				</Compiler>
 				<Linker>
 					<Add option="-lardusim" />
+					<Add library="..\ArduinoUnit\build\libArduinoUnit_sim.a" />
 				</Linker>
 				<Environment>
 					<Variable name="ARDUINO_DIR" value="$(APP_PATH)\ardusim" />
@@ -659,6 +661,10 @@
 		</Compiler>
 		<Unit filename="SideralTime.cpp" />
 		<Unit filename="SideralTime.h" />
+		<Unit filename="SideralTimeTest.h">
+			<Option target="Simulator - Debug" />
+			<Option target="Simulator - Release" />
+		</Unit>
 		<Unit filename="SideralTimeTest.ino">
 			<Option compile="1" />
 			<Option link="1" />

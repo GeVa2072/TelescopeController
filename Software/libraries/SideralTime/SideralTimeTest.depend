@@ -1,118 +1,39 @@
 # depslib dependency file v1.0
-1515529357 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\time\time.cpp
-	<Arduino.h>
-	<WProgram.h>
-	"TimeLib.h"
-
-1371033102 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\arduino.h
-	<stdlib.h>
-	<string.h>
-	<math.h>
-	<avr/pgmspace.h>
-	<avr/io.h>
-	<avr/interrupt.h>
-	"binary.h"
-	"WCharacter.h"
-	"WString.h"
-	"HardwareSerial.h"
-	"pins_arduino.h"
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\binary.h
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\wcharacter.h
-	<ctype.h>
-
-1371033134 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\wstring.h
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	<avr/pgmspace.h>
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\hardwareserial.h
-	<inttypes.h>
-	"Stream.h"
-	"USBAPI.h"
-
-1371032830 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\stream.h
-	<inttypes.h>
-	"Print.h"
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\print.h
-	<inttypes.h>
-	<stdio.h>
-	"WString.h"
-	"Printable.h"
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\printable.h
-	<new.h>
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\new.h
-	<stdlib.h>
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\usbapi.h
-
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\variants\standard\pins_arduino.h
-	<avr/pgmspace.h>
-
-1515537654 c:\cygwin64\home\geva\telescopecontroller\software\libraries\time\timelib.h
-	<inttypes.h>
-	<sys/types.h>
-
-1515529357 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\time\time.h
-	"TimeLib.h"
-
-1515544430 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp
-	<../Time/Time.h>
+1515610826 source:d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp
 	"SideralTime.h"
 
-1515529357 c:\cygwin64\home\geva\telescopecontroller\software\libraries\time\time.h
-	"TimeLib.h"
+1515611073 d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltime.h
 
-1515538980 c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.h
-	"../Time/Time.h"
-
-1515545004 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltimetest.ino
+1515611016 source:d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltimetest.ino
 	<ArduinoUnit.h>
-	"../Time/Time.h"
 	"SideralTime.h"
+	"SideralTimeTest.h"
 
-1515532107 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\arduinounit.h
+1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounit.h
 	<stdint.h>
 	<Print.h>
 	<ArduinoUnitUtility/Compare.h>
 	<ArduinoUnitUtility/FakeStream.h>
 	<ArduinoUnitUtility/FakeStreamBuffer.h>
+	<ArduinoUnitUtility/FreeMemory.h>
 
-1515528659 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\arduinounitutility\compare.h
-	<avr/pgmspace.h>
-	<WString.h>
+1231619566 d:\logiciels\codeblocks\ardusim\arduino\cores\stdint.h
+	<stddef.h>
 
-1515528660 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\arduinounitutility\fakestream.h
-	"Arduino.h"
+1355115034 d:\logiciels\codeblocks\ardusim\arduino\cores\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
 
-1515528661 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\arduinounitutility\fakestreambuffer.h
-	"Arduino.h"
-	"FakeStream.h"
-
-1515528661 c:\developpement\codeblocks\arduino\hardware\arduino\cores\arduino\arduinounitutility\freememory.h
-
-1515531259 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.h
-
-1361529170 c:\developpement\codeblocks\ardusim\arduino\cores\arduino.h
+1361427514 d:\logiciels\codeblocks\ardusim\arduino\cores\wstring.h
+	<ardusim.h>
 	<stdlib.h>
 	<string.h>
-	<math.h>
-	"ardusim.h"
+	<ctype.h>
 	<avr/pgmspace.h>
-	<avr/io.h>
-	<avr/interrupt.h>
-	"binary.h"
-	"WCharacter.h"
-	"WString.h"
-	"HardwareSerial.h"
-	"pins_arduino.h"
 
-1361531150 c:\developpement\codeblocks\ardusim\include\ardusim.h
+1361531150 d:\logiciels\codeblocks\ardusim\include\ardusim.h
 	<windows.h>
 	<unistd.h>
 	<stdint.h>
@@ -131,17 +52,14 @@
 	<sys/select.h>
 	<pthread.h>
 
-1231619566 c:\developpement\codeblocks\ardusim\arduino\cores\stdint.h
-	<stddef.h>
-
-1333280462 c:\developpement\codeblocks\ardusim\include\avr\pgmspace.h
+1333276862 d:\logiciels\codeblocks\ardusim\include\avr\pgmspace.h
 	<avr/io.h>
 	<avr/pgmspace.h>
 	<inttypes.h>
 	<stddef.h>
 	<avr/io.h>
 
-1263081802 c:\developpement\codeblocks\ardusim\include\avr\io.h
+1263081802 d:\logiciels\codeblocks\ardusim\include\avr\io.h
 	<avr/sfr_defs.h>
 	<avr/portpins.h>
 	<avr/common.h>
@@ -303,75 +221,83 @@
 	<avr/fuse.h>
 	<avr/lock.h>
 
-1361522024 c:\developpement\codeblocks\ardusim\include\avr\sfr_defs.h
+1361522024 d:\logiciels\codeblocks\ardusim\include\avr\sfr_defs.h
 	<inttypes.h>
 
-1263081814 c:\developpement\codeblocks\ardusim\include\avr\portpins.h
+1263081814 d:\logiciels\codeblocks\ardusim\include\avr\portpins.h
 
-1263081800 c:\developpement\codeblocks\ardusim\include\avr\common.h
+1263081800 d:\logiciels\codeblocks\ardusim\include\avr\common.h
 	<avr/sfr_defs.h>
 
-1263081814 c:\developpement\codeblocks\ardusim\include\avr\version.h
+1263081814 d:\logiciels\codeblocks\ardusim\include\avr\version.h
 
-1263081802 c:\developpement\codeblocks\ardusim\include\avr\iom1280.h
+1263081802 d:\logiciels\codeblocks\ardusim\include\avr\iom1280.h
 	<avr/iomxx0_1.h>
 
-1228397784 c:\developpement\codeblocks\ardusim\include\avr\iomxx0_1.h
+1228397784 d:\logiciels\codeblocks\ardusim\include\avr\iomxx0_1.h
 
-1263081804 c:\developpement\codeblocks\ardusim\include\avr\iom2560.h
+1263081804 d:\logiciels\codeblocks\ardusim\include\avr\iom2560.h
 	<avr/iomxx0_1.h>
 
-1263081806 c:\developpement\codeblocks\ardusim\include\avr\iom328p.h
+1263081806 d:\logiciels\codeblocks\ardusim\include\avr\iom328p.h
 
-1263081804 c:\developpement\codeblocks\ardusim\include\avr\iom168p.h
+1263081804 d:\logiciels\codeblocks\ardusim\include\avr\iom168p.h
 
-1263081802 c:\developpement\codeblocks\ardusim\include\avr\fuse.h
+1263081802 d:\logiciels\codeblocks\ardusim\include\avr\fuse.h
 	<avr/io.h>
 	<avr/io.h>
 	<avr/io.h>
 
-1263081814 c:\developpement\codeblocks\ardusim\include\avr\lock.h
+1263081814 d:\logiciels\codeblocks\ardusim\include\avr\lock.h
 	<avr/io.h>
 	<avr/io.h>
 
-1337182954 c:\developpement\codeblocks\ardusim\include\avr\interrupt.h
-	<avr/io.h>
+1322479934 d:\logiciels\codeblocks\ardusim\arduino\cores\printable.h
+	<new.h>
 
-1322479932 c:\developpement\codeblocks\ardusim\arduino\cores\binary.h
+1361429300 d:\logiciels\codeblocks\ardusim\arduino\cores\new.h
+	<stdlib.h>
 
-1355115034 c:\developpement\codeblocks\ardusim\arduino\cores\wcharacter.h
-	<ctype.h>
+1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\compare.h
+	<avr/pgmspace.h>
+	<WString.h>
 
-1361427514 c:\developpement\codeblocks\ardusim\arduino\cores\wstring.h
-	<ardusim.h>
+1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\fakestream.h
+	"Arduino.h"
+
+1361529170 d:\logiciels\codeblocks\ardusim\arduino\cores\arduino.h
 	<stdlib.h>
 	<string.h>
-	<ctype.h>
+	<math.h>
+	"ardusim.h"
 	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"pins_arduino.h"
 
-1361463432 c:\developpement\codeblocks\ardusim\arduino\cores\hardwareserial.h
+1337179354 d:\logiciels\codeblocks\ardusim\include\avr\interrupt.h
+	<avr/io.h>
+
+1322479932 d:\logiciels\codeblocks\ardusim\arduino\cores\binary.h
+
+1355115034 d:\logiciels\codeblocks\ardusim\arduino\cores\wcharacter.h
+	<ctype.h>
+
+1361463432 d:\logiciels\codeblocks\ardusim\arduino\cores\hardwareserial.h
 	<inttypes.h>
 	"Stream.h"
 	<ctb-0.16/ctb.h>
 	"USBAPI.h"
 
-1355115034 c:\developpement\codeblocks\ardusim\arduino\cores\stream.h
+1355115034 d:\logiciels\codeblocks\ardusim\arduino\cores\stream.h
 	<inttypes.h>
 	"Print.h"
 
-1355115034 c:\developpement\codeblocks\ardusim\arduino\cores\print.h
-	<inttypes.h>
-	<stdio.h>
-	"WString.h"
-	"Printable.h"
-
-1322479934 c:\developpement\codeblocks\ardusim\arduino\cores\printable.h
-	<new.h>
-
-1361429300 c:\developpement\codeblocks\ardusim\arduino\cores\new.h
-	<stdlib.h>
-
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\ctb.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\ctb.h
 	"ctb-0.16/fifo.h"
 	"ctb-0.16/gpib.h"
 	"ctb-0.16/getopt.h"
@@ -382,84 +308,68 @@
 	"ctb-0.16/serportx.h"
 	"ctb-0.16/timer.h"
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\fifo.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\fifo.h
 	<sys/types.h>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\gpib.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\gpib.h
 	"ctb-0.16/iobase.h"
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\iobase.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\iobase.h
 	"ctb-0.16/fifo.h"
 	<sys/types.h>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\getopt.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\getopt.h
 	"win32/getopt.h"
 	<getopt.h>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\win32\getopt.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\win32\getopt.h
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\kbhit.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\kbhit.h
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\portscan.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\portscan.h
 	<string>
 	<vector>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\serport.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\serport.h
 	"ctb-0.16/win32/serport.h"
 	"ctb-0.16/linux/serport.h"
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\win32\serport.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\win32\serport.h
 	"../serportx.h"
 	<windows.h>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\serportx.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\serportx.h
 	<stdio.h>
 	<string.h>
 	"ctb-0.16/iobase.h"
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\linux\serport.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\linux\serport.h
 	"ctb-0.16/serportx.h"
 	<linux/serial.h>
 	<termios.h>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\timer.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\timer.h
 	"win32/timer.h"
 	"linux/timer.h"
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\win32\timer.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\win32\timer.h
 	<windows.h>
 
-1338888486 c:\developpement\codeblocks\ardusim\include\ctb-0.16\linux\timer.h
+1338884886 d:\logiciels\codeblocks\ardusim\include\ctb-0.16\linux\timer.h
 	<pthread.h>
 
-1355115034 c:\developpement\codeblocks\ardusim\arduino\cores\usbapi.h
+1355115034 d:\logiciels\codeblocks\ardusim\arduino\cores\usbapi.h
 
-1361531402 c:\developpement\codeblocks\ardusim\arduino\variants\standard\pins_arduino.h
+1361531402 d:\logiciels\codeblocks\ardusim\arduino\variants\standard\pins_arduino.h
 	<ardusim.h>
 	<avr/pgmspace.h>
 
-1515531682 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\time\timelib.h
-	<inttypes.h>
-	<sys/types.h>
-
-1515532107 c:\developpement\codeblocks\ardusim\arduino\cores\arduinounit.h
-	<stdint.h>
-	<Print.h>
-	<ArduinoUnitUtility/Compare.h>
-	<ArduinoUnitUtility/FakeStream.h>
-	<ArduinoUnitUtility/FakeStreamBuffer.h>
-
-1515528659 c:\developpement\codeblocks\ardusim\arduino\cores\arduinounitutility\compare.h
-	<avr/pgmspace.h>
-	<WString.h>
-
-1515528660 c:\developpement\codeblocks\ardusim\arduino\cores\arduinounitutility\fakestream.h
-	"Arduino.h"
-
-1515528661 c:\developpement\codeblocks\ardusim\arduino\cores\arduinounitutility\fakestreambuffer.h
+1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\fakestreambuffer.h
 	"Arduino.h"
 	"FakeStream.h"
 
-1362986950 c:\developpement\codeblocks\arduino\hardware\arduino\variants\eightanaloginputs\pins_arduino.h
-	"../standard/pins_arduino.h"
+1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\freememory.h
+
+1515610569 d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltimetest.h
+	"SideralTime.h"
 
