@@ -3,20 +3,43 @@
 #include "../Time/Time.h"
 #include "SideralTime.h"
 
+test(Ephemeride)
+{
+  static tmElements_t testTime;
+  testTime.Day = 21;
+  testTime.Month=8;
+  testTime.Year=2018 - 1970;
+  testTime.Hour=4;
+  testTime.Minute=16;
+  testTime.Second=00;
+  time_t time = makeTime(testTime);
+  SideralTime* sideral = new SideralTime(time);
+  time_t sideralTime = sideral->time();
+  assertEqual(0, sideralTime);
+}
+
 test(UTCtoSideral)
 {
   static tmElements_t testTime;
-  testTime.Day = 1;
-  testTime.Month=1;
-  testTime.Year=2000;
-  testTime.Hour=00;
-  testTime.Minute=00;
-  testTime.Second=00;
+  testTime.Day = 30;
+  testTime.Month=2;
+  testTime.Year=2018 - 1970;
+  testTime.Hour=10;
+  testTime.Minute=21;
+  testTime.Second=34;
+
+  static tmElements_t expectedResult;
+  expectedResult.Day = 1;
+  expectedResult.Month=0;
+  expectedResult.Year=0;
+  expectedResult.Hour=22;
+  expectedResult.Minute=52;
+  expectedResult.Second=36;
 
   time_t time = makeTime(testTime);
   SideralTime* sideral = new SideralTime(time);
   time_t sideralTime = sideral->time();
-  assertEqual(time, sideralTime);
+  assertEqual(makeTime(expectedResult), sideralTime);
 }
 #define SECS_PER_MIN  ((time_t)(60UL))
 #define SECS_PER_HOUR ((time_t)(3600UL))

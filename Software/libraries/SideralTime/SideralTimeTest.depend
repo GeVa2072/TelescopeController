@@ -61,7 +61,7 @@
 1515529357 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\time\time.h
 	"TimeLib.h"
 
-1515538973 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp
+1515544430 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp
 	<../Time/Time.h>
 	"SideralTime.h"
 
@@ -71,7 +71,7 @@
 1515538980 c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.h
 	"../Time/Time.h"
 
-1515538857 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltimetest.ino
+1515545004 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltimetest.ino
 	<ArduinoUnit.h>
 	"../Time/Time.h"
 	"SideralTime.h"
