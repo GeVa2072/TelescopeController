@@ -38,6 +38,7 @@ template  < typename A, typename B > struct Compare
   } // moreOrEqual
 };
 template  <  > struct Compare<String,String>;
+template  <  > struct Compare<double,double>;
 template  <  > struct Compare<String,const char *>;
 #if defined(F)
 template  <  > struct Compare<String,const __FlashStringHelper *>;
@@ -80,6 +81,12 @@ template  < size_t N > struct Compare<char [N],const __FlashStringHelper *>;
 #endif
 template  < size_t N > struct Compare<char [N],char *>;
 template  < size_t N, size_t M > struct Compare<char [N],char [M]>;
+template  <  > struct Compare<double, double> {
+inline static bool equal(const double &a,const double &b)
+  {
+    return a==b;
+  } // equal
+};
 template  <  > struct Compare<String,String>
 {
   inline static int between(const String &a,const String &b)

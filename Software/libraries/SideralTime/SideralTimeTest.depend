@@ -1,10 +1,12 @@
 # depslib dependency file v1.0
-1515610826 source:d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp
+1515689048 source:d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp
 	"SideralTime.h"
+	<malloc.h>
+	<HardwareSerial.h>
 
-1515611073 d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltime.h
+1515689078 d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltime.h
 
-1515611016 source:d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltimetest.ino
+1515688982 source:d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltimetest.ino
 	<ArduinoUnit.h>
 	"SideralTime.h"
 	"SideralTimeTest.h"
@@ -258,7 +260,7 @@
 1361429300 d:\logiciels\codeblocks\ardusim\arduino\cores\new.h
 	<stdlib.h>
 
-1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\compare.h
+1515684839 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\compare.h
 	<avr/pgmspace.h>
 	<WString.h>
 
@@ -370,7 +372,7 @@
 
 1515597691 d:\personnel\telescopecontroller\software\libraries\arduinounit\arduinounitutility\freememory.h
 
-1515610569 d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltimetest.h
+1515689082 d:\personnel\telescopecontroller\software\libraries\sideraltime\sideraltimetest.h
 	"SideralTime.h"
 
 1515633882 source:c:\cygwin64\home\geva\telescopecontroller\software\libraries\sideraltime\sideraltime.cpp

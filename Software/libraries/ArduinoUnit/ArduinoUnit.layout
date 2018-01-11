@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Simulator - Debug" />
-	<File name="ArduinoUnit.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ArduinoUnitUtility\ArduinoUnit.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="14906" topLine="513" />
+			<Cursor1 position="907" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ArduinoUnitUtility\Compare.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="136" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="ArduinoUnit.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14906" topLine="507" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
