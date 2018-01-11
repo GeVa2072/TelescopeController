@@ -6,10 +6,14 @@ before_install:
   - export DISPLAY=:1.0
   - wget https://downloads.arduino.cc/arduino-1.8.5-linux64.tar.xz
   - tar xf arduino-1.8.5-linux64.tar.xz
-  - sudo mv arduino-1.8.5 /usr/local/share/arduino
-  - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+  - mv arduino-1.8.5 $HOME/arduino_ide/
+  - export PATH="$HOME/arduino_ide:$PATH"
+  - wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
+  - tar xf v2.2.0.tar.gz
+  - ln -s $PWD/arduinounit-2.2.0 $HOME/arduino_ide/libraries/ArduinoUnit
 script:
-  - arduino --verify --board arduino:avr:nano $PWD/Software/TelescopeController.ino
+  - arduino --install-library ArduinoUnit
+  - arduino --verify --board arduino:avr:nano:cpu=atmega168 $PWD/Software/TelescopeController.ino
 notifications:
   email:
     on_success: change
