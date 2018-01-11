@@ -11,6 +11,12 @@ before_install:
   - wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
   - tar xf v2.2.0.tar.gz
   - ln -s $PWD/arduinounit-2.2.0 $HOME/arduino_ide/libraries/ArduinoUnit
+  - wget https://github.com/GeVa2072/ArduSim/archive/master.zip
+  - unzip master.zip
+  - ln -s $PWD/ArduSim-master/ $HOME/ardusim
+install:
+  - cd Software
+  - make
 script:
   - arduino --install-library ArduinoUnit
   - arduino --verify --board arduino:avr:nano:cpu=atmega168 $PWD/Software/TelescopeController.ino
