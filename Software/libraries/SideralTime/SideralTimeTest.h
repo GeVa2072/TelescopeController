@@ -6,7 +6,7 @@
 class SideralTimeTest : public SideralTime {
 public:
     inline SideralTimeTest(time_t time) : SideralTime(time) { }
-    inline time_t julienCalendarTest(time_t time) {
+    inline double julienCalendarTest(time_t time) {
         return julienCalendarElapsedDaysFractionSinceJ2000(time);
     }
 };

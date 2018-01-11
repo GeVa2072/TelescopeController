@@ -21,11 +21,11 @@ class SideralTime
         virtual ~SideralTime();
         inline time_t time();
         double GMST(time_t time);
-        static time_t makeTime(const unsigned int year0, const unsigned int mon0,
+        static time_t mktime(const unsigned int year0, const unsigned int mon0,
                                     const unsigned int day, const unsigned int hour,
                                     const unsigned int min, const unsigned int sec);
     protected:
-        time_t julienCalendarElapsedDaysFractionSinceJ2000(time_t time);
+        double julienCalendarElapsedDaysFractionSinceJ2000(time_t time);
     private:
         time_t sideralTime;
 };
