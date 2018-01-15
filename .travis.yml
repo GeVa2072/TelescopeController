@@ -17,6 +17,7 @@ before_install:
   - ls -al $HOME/ardusim/
   - cd $HOME/ardusim ; make ; cd -
   - ls -al $HOME/ardusim/
+  - mv  $HOME/ardusim/ardusim.a  $HOME/ardusim/libardusim.a
   - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:$HOME/ardusim/"
 install:
   - cd Software
