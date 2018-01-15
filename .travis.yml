@@ -24,6 +24,8 @@ install:
   - echo ${LD_LIBRARY_PATH}
   - cd Software
   - make
+  - ls -al 
+  - ./main
 script:
   - arduino --install-library ArduinoUnit
   - arduino --verify --board arduino:avr:nano:cpu=atmega168 $PWD/Software/TelescopeController.ino
