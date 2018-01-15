@@ -19,6 +19,7 @@ before_install:
   - ls -al $HOME/ardusim/
   - mv  $HOME/ardusim/ardusim.a  $HOME/ardusim/libardusim.a
   - export LD_LIBRARY_PATH="$HOME/ardusim/"
+  - ar -t $HOME/ardusim/libardusim.a
 install:
   - echo ${LD_LIBRARY_PATH}
   - cd Software
