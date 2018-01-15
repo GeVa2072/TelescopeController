@@ -17,7 +17,7 @@ before_install:
   - ls -al $HOME/ardusim/
   - cd $HOME/ardusim ; make ; cd -
   - ls -al $HOME/ardusim/
-  - cp $HOME/ardusim/ardusim.a /usr/local/lib/
+  - sudo cp $HOME/ardusim/ardusim.a /usr/local/lib/
 install:
   - cd Software
   - make
