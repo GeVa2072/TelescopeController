@@ -1,7 +1,20 @@
-#include <Arduino.h>
+#line 2 "TelescopeController.ino"
+#include <ArduinoUnit.h>
 
-void setup() {
+test(simple1)
+{
+  assertTrue(true);
 }
 
-void loop() {
+
+void setup()
+{
+  Serial.begin(9600);
+  while(!Serial); // for the Arduino Leonardo/Micro only
+}
+
+void loop()
+{
+  Test::run();
+  exit(0);
 }
