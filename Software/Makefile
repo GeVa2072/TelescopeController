@@ -6,7 +6,8 @@ CXXFLAGS+= -DF_CPU=8000000L -DARDUSIM -D__AVR_ATmega168P__
 CXXFLAGS+= -x c++
 INCLUDEDIRS= arduino/cores arduino/variants/standard include
 INCLUDES= $(patsubst %,-I$(ARDUINO_DIR)/%,$(INCLUDEDIRS))
-LDFLAGS= $(ARDUINO_DIR)/*.o
+OBJS= $(ARDUINO_DIR)/*.o
+LDFLAGS=$(patsubst %,-L%,$(OBJS))
 # -lardusim
 
 ifeq ($(OS),Windows_NT)
