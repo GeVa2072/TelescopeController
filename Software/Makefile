@@ -14,7 +14,11 @@ ifeq ($(OS),Windows_NT)
     CCFLAGS += -D WIN32
 endif
 
-
-MAIN:
+MAIN.o:
 	echo @$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
-	@$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
+	@$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
+
+
+MAIN: MAIN.o
+	echo @$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
+	@$(CXX) -o main /home/travis/ardusim/*.o *.o
