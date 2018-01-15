@@ -20,5 +20,5 @@ MAIN: MAIN.o
 
 MAIN.o:
 	echo @$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
-	@$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
+	@$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. -I$HOME/arduino_ide/libraries/ArduinoUnit/ $HOME/arduino_ide/libraries/ArduinoUnit/*.cpp TelescopeController.ino 
 
