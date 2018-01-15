@@ -14,9 +14,9 @@ before_install:
   - wget https://github.com/GeVa2072/ArduSim/archive/master.zip
   - unzip master.zip
   - ln -s $PWD/ArduSim-master/ $HOME/ardusim
-  - ls -al $HOME/ardusim
+  - ls -al $HOME/ardusim/
   - cd $HOME/ardusim ; make ; cd -
-  - ls -al $HOME/ardusim
+  - ls -al $HOME/ardusim/
 install:
   - cd Software
   - make
