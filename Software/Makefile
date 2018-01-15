@@ -7,7 +7,7 @@ CXXFLAGS+= -x c++
 INCLUDEDIRS= arduino/cores arduino/variants/standard include
 INCLUDES= $(patsubst %,-I$(ARDUINO_DIR)/%,$(INCLUDEDIRS))
 OBJS= $(ARDUINO_DIR)/*.o
-LDFLAGS=$(patsubst %,-L%,$(OBJS))
+LDFLAGS=-L /home/travis/ardusim/main.o 
 # -lardusim
 
 ifeq ($(OS),Windows_NT)
