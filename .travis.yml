@@ -8,9 +8,9 @@ before_install:
 #  - tar xf arduino-1.8.5-linux64.tar.xz
 #  - mv arduino-1.8.5 $HOME/arduino_ide/
 #  - export PATH="$HOME/arduino_ide:$PATH"
-#  - wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
-#  - tar xf v2.2.0.tar.gz
-#  - ln -s $PWD/arduinounit-2.2.0 $HOME/arduino_ide/libraries/ArduinoUnit
+  - wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
+  - tar xf v2.2.0.tar.gz
+  - ln -s $PWD/arduinounit-2.2.0 $HOME/arduino_ide/libraries/ArduinoUnit
   - wget https://github.com/GeVa2072/ArduSim/archive/master.zip
   - unzip master.zip
   - ln -s $PWD/ArduSim-master/ $HOME/ardusim
