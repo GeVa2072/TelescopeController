@@ -22,6 +22,7 @@ before_install:
   - for i in $(ar -t $HOME/ardusim/libardusim.a) ; do objdump -t $HOME/ardusim/$i ; done
   - arduino --install-library ArduinoUnit
   - ls -al $HOME/arduino_ide/
+  - ls -al $HOME/arduino_ide/lib
 install:
   - echo ${LD_LIBRARY_PATH}
   - cd Software
