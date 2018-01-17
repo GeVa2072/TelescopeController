@@ -24,28 +24,29 @@ setup:
 fetch: setup fetch-ardusim fetch-arduinounit
 
 fetch-arduinounit:
-	wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
-	tar xf v2.2.0.tar.gz
-	cp -r arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
+	@wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
+	@tar xf v2.2.0.tar.gz
+	@cp -r arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
 	
 fetch-ardusim:
-	wget https://github.com/GeVa2072/ArduSim/archive/master.zip
-	unzip master.zip
-	cp -r ArduSim-master/* $(ARDUINO_DIR)
+	@wget https://github.com/GeVa2072/ArduSim/archive/master.zip
+	@unzip master.zip
+	@cp -r ArduSim-master/* $(ARDUINO_DIR)
 
 check: ardusim arduinounit MAIN
 
 ardusim:
-	$(MAKE) -C $(ARDUINO_DIR)
+	@$(MAKE) -C $(ARDUINO_DIR)
 	ls -al $(ARDUINO_DIR)
 
 arduinounit:
-	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
+	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
 	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
-	$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
+	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
+	ls -al $(ARDUINO_DIR)/ArduinoUnit/
 
 MAIN: MAIN.o
-	$(CXX) -o main -L $(ARDUINO_DIR)/ardusim.a -L $(ARDUINO_DIR)/ArduinoUnit/arduinounit.a *.o
+	$(CXX) -o main $(LDFLAGS) -L $(ARDUINO_DIR)/ardusim.a -L $(ARDUINO_DIR)/ArduinoUnit/arduinounit.a *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
