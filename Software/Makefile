@@ -50,7 +50,7 @@ arduinounit:
 	nm -g -C libarduinounit.a
 
 MAIN: MAIN.o
-	$(CXX) -o main $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
+	$(CXX) -o main $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
