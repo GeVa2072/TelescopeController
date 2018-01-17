@@ -1,31 +1,6 @@
 language: cpp
 
-before_install:
-#  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16"
-#  - sleep 3
-#  - export DISPLAY=:1.0
-#  - wget https://downloads.arduino.cc/arduino-1.8.5-linux64.tar.xz
-#  - tar xf arduino-1.8.5-linux64.tar.xz
-#  - mv arduino-1.8.5 $HOME/arduino_ide/
-#  - export PATH="$HOME/arduino_ide:$PATH"
-  - wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
-  - tar xf v2.2.0.tar.gz
-#  - ln -s $PWD/arduinounit-2.2.0 $HOME/arduino_ide/libraries/ArduinoUnit
-  - cd $PWD/arduinounit-2.2.0; make 
-  - wget https://github.com/GeVa2072/ArduSim/archive/master.zip
-  - unzip master.zip
-  - ln -s $PWD/ArduSim-master/ $HOME/ardusim
-  - ls -al $HOME/ardusim/
-  - cd $HOME/ardusim ; make ; cd -
-  - ls -al $HOME/ardusim/
-  - mv  $HOME/ardusim/ardusim.a  $HOME/ardusim/libardusim.a
-  - export LD_LIBRARY_PATH="$HOME/ardusim/"
-  - for i in $(ar -t $HOME/ardusim/libardusim.a) ; do objdump -t $HOME/ardusim/$i ; done
-  - arduino --install-library ArduinoUnit
-  - find $HOME/arduino_ide/ -name '*.a'
-  - find $HOME/arduino_ide/ -name '*.o'
 install:
-  - echo ${LD_LIBRARY_PATH}
   - cd Software
   - make
   - ls -al 
