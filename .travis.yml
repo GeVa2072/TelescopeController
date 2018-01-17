@@ -20,6 +20,8 @@ before_install:
   - mv  $HOME/ardusim/ardusim.a  $HOME/ardusim/libardusim.a
   - export LD_LIBRARY_PATH="$HOME/ardusim/"
   - for i in $(ar -t $HOME/ardusim/libardusim.a) ; do objdump -t $HOME/ardusim/$i ; done
+  - arduino --install-library ArduinoUnit
+  - ls -al $HOME/arduino_ide/
 install:
   - echo ${LD_LIBRARY_PATH}
   - cd Software
@@ -27,7 +29,6 @@ install:
   - ls -al 
   - ./main
 script:
-  - arduino --install-library ArduinoUnit
   - arduino --verify --board arduino:avr:nano:cpu=atmega168 $PWD/Software/TelescopeController.ino
 notifications:
   email:
