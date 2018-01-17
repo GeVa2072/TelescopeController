@@ -39,6 +39,7 @@ ardusim:
 	@$(MAKE) -C $(ARDUINO_DIR)
 	ls -al $(ARDUINO_DIR)
 	cp $(ARDUINO_DIR)/ardusim.a $(ARDUINO_DIR)/libardusim.a
+	objdump -D  $(ARDUINO_DIR)/libardusim.a
 
 arduinounit:
 	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
@@ -46,10 +47,12 @@ arduinounit:
 	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 	ls -al $(ARDUINO_DIR)/ArduinoUnit/
 	cp arduinounit.a libarduinounit.a
+	objdump -D  libarduinounit.a
 
 MAIN: MAIN.o
 	$(CXX) -o main -L $(ARDUINO_DIR)/libardusim.a -L libarduinounit.a *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
+	objdump -D  TelescopeController.o
 
