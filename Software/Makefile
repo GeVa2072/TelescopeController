@@ -38,7 +38,7 @@ ardusim:
 
 arduinounit:
 	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
-	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
+	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
 
 MAIN: MAIN.o
 	$(CXX) -o main $(ARDUINO_DIR)/ardusim/*.o $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility/*.o *.o
