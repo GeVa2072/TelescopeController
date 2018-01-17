@@ -45,7 +45,7 @@ arduinounit:
 	$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 
 MAIN: MAIN.o
-	$(CXX) -o main -L $(ARDUINO_DIR)/*.o -L $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
+	$(CXX) -o main -L $(ARDUINO_DIR)/ardusim.a -L $(ARDUINO_DIR)/ArduinoUnit/arduinounit.a *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
