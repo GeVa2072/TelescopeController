@@ -38,10 +38,10 @@ ardusim:
 
 arduinounit:
 	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
-	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp -o ArduinoUnit.o
+	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp
 
 MAIN: MAIN.o
-	$(CXX) -o main /home/travis/ardusim/*.o *.o
+	$(CXX) -o main $(ARDUINO_DIR)/ardusim/*.o $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility/*.o *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. -I$HOME/arduino_ide/libraries/ArduinoUnit/ TelescopeController.ino 
