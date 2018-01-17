@@ -24,9 +24,9 @@ setup:
 fetch: setup fetch-ardusim fetch-arduinounit
 
 fetch-arduinounit:
-	@wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
-	@tar xf v2.2.0.tar.gz
-	@cp -r arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
+	@wget https://github.com/GeVa2072/arduinounit/archive/master.zip
+	@unzip master.zip
+	@cp -r arduinounit-master/src/* $(ARDUINO_DIR)/ArduinoUnit/
 	
 fetch-ardusim:
 	@wget https://github.com/GeVa2072/ArduSim/archive/master.zip
