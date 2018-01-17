@@ -25,13 +25,13 @@ fetch-arduinounit:
 	cd /tmp/
 	 wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
 	 tar xf v2.2.0.tar.gz
-	 cp -r /tmp/arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
+	 cp -r arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
 
 fetch-ardusim:
 	cd /tmp/
 	wget https://github.com/GeVa2072/ArduSim/archive/master.zip
 	unzip master.zip
-	cp -r /tmp/ArduSim-master/* $(ARDUINO_DIR)
+	cp -r ArduSim-master/* $(ARDUINO_DIR)
 	
 
 check: ardusim arduinounit MAIN
