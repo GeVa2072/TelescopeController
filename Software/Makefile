@@ -48,7 +48,7 @@ arduinounit:
 	cp arduinounit.a libarduinounit.a
 
 MAIN: MAIN.o
-	$(CXX) -o main $(LDFLAGS) -L $(ARDUINO_DIR)/libardusim.a -L libarduinounit.a *.o
+	$(CXX) -o main -L $(ARDUINO_DIR)/libardusim.a -L libarduinounit.a *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
