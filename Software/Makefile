@@ -1,5 +1,7 @@
 ARDUINO_DIR=${HOME}/ardusim
 
+AR=ar
+ARFLAGS=rcs
 CXX=g++
 CXXFLAGS= -g 
 CXXFLAGS+= -DF_CPU=8000000L -DARDUSIM -D__AVR_ATmega168P__
@@ -7,7 +9,7 @@ CXXFLAGS+= -x c++
 INCLUDEDIRS= arduino/cores arduino/variants/standard include
 INCLUDES= $(patsubst %,-I$(ARDUINO_DIR)/%,$(INCLUDEDIRS))
 OBJS= $(ARDUINO_DIR)/*.o
-LDFLAGS=-L /home/travis/ardusim/main.o 
+LDFLAGS=-L $(ARDUINO_DIR)/main.o -L $(ARDUINO_DIR)/ArduinoUnit/
 # -lardusim
 
 ifeq ($(OS),Windows_NT)
@@ -40,10 +42,10 @@ ardusim:
 arduinounit:
 	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
 	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
-	ls -al $(ARDUINO_DIR)/ArduinoUnit/
-	ls -al $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility
+	$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
+
 MAIN: MAIN.o
-	$(CXX) -o main -L $(ARDUINO_DIR)/ardusim/*.o -L $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility/*.o *.o
+	$(CXX) -o main -L $(ARDUINO_DIR)/*.o -L $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
