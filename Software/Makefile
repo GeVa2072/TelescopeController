@@ -35,14 +35,16 @@ check: ardusim arduinounit MAIN
 
 ardusim:
 	$(MAKE) -C $(ARDUINO_DIR)
+	ls -al $(ARDUINO_DIR)
 
 arduinounit:
 	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
 	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
-
+	ls -al $(ARDUINO_DIR)/ArduinoUnit/
+	ls -al $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility
 MAIN: MAIN.o
-	$(CXX) -o main $(ARDUINO_DIR)/ardusim/*.o $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility/*.o *.o
+	$(CXX) -o main -L $(ARDUINO_DIR)/ardusim/*.o -L $(ARDUINO_DIR)/ArduinoUnit/ArduinoUnitUtility/*.o *.o
 	
 MAIN.o:
-	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
+	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
 
