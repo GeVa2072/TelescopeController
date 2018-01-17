@@ -45,10 +45,10 @@ arduinounit:
 	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
 	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 	ls -al $(ARDUINO_DIR)/ArduinoUnit/
-	cp $(ARDUINO_DIR)/ArduinoUnit/arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/libarduinounit.a
+	cp arduinounit.a libarduinounit.a
 
 MAIN: MAIN.o
-	$(CXX) -o main $(LDFLAGS) -L $(ARDUINO_DIR)/libardusim.a -L $(ARDUINO_DIR)/ArduinoUnit/libarduinounit.a *.o
+	$(CXX) -o main $(LDFLAGS) -L $(ARDUINO_DIR)/libardusim.a -L libarduinounit.a *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
