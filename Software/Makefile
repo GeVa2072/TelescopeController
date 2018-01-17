@@ -22,18 +22,14 @@ setup:
 fetch: setup fetch-ardusim fetch-arduinounit
 
 fetch-arduinounit:
-	cd /tmp/
-	 wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
-	 tar xf v2.2.0.tar.gz
-	 cp -r arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
-	 ls -al $(ARDUINO_DIR)/ArduinoUnit/
-
+	wget https://github.com/mmurdoch/arduinounit/archive/v2.2.0.tar.gz
+	tar xf v2.2.0.tar.gz
+	cp -r arduinounit-2.2.0/src/* $(ARDUINO_DIR)/ArduinoUnit/
+	
 fetch-ardusim:
-	cd /tmp/
 	wget https://github.com/GeVa2072/ArduSim/archive/master.zip
 	unzip master.zip
 	cp -r ArduSim-master/* $(ARDUINO_DIR)
-	
 
 check: ardusim arduinounit MAIN
 
@@ -42,13 +38,11 @@ ardusim:
 
 arduinounit:
 	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
-	@$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp -o ArduinoUnit.o
+	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp -o ArduinoUnit.o
 
 MAIN: MAIN.o
-	echo @$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
-	@$(CXX) -o main /home/travis/ardusim/*.o *.o
+	$(CXX) -o main /home/travis/ardusim/*.o *.o
 	
 MAIN.o:
-	echo @$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. TelescopeController.ino
-	@$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. -I$HOME/arduino_ide/libraries/ArduinoUnit/ TelescopeController.ino 
+	$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) -I. -I$HOME/arduino_ide/libraries/ArduinoUnit/ TelescopeController.ino 
 
