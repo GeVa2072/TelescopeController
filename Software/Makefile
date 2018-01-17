@@ -6,7 +6,7 @@ CXX=g++
 CXXFLAGS= -g 
 CXXFLAGS+= -DF_CPU=8000000L -DARDUSIM -D__AVR_ATmega168P__
 CXXFLAGS+= -x c++
-INCLUDEDIRS= arduino/cores arduino/variants/standard include $(ARDUINO_DIR)/ArduinoUnit/
+INCLUDEDIRS= arduino/cores arduino/variants/standard include ArduinoUnit/
 INCLUDES= $(patsubst %,-I$(ARDUINO_DIR)/%,$(INCLUDEDIRS))
 OBJS= $(ARDUINO_DIR)/*.o
 LDFLAGS=-lardusim -larduinounit
@@ -43,7 +43,7 @@ ardusim:
 
 arduinounit:
 	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
-	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -fpermissive ArduinoUnitUtility/*.cpp
 	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 	ls -al $(ARDUINO_DIR)/ArduinoUnit/
 	cp arduinounit.a libarduinounit.a
