@@ -41,7 +41,7 @@ ardusim:
 	$(MAKE) -C $(ARDUINO_DIR)
 
 arduinounit:
-	cd $(ARDUINO_DIR)/ArduinoUnit/
+	cd $(ARDUINO_DIR)/ArduinoUnit/ && \
 	@$(CXX) -c $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp -o ArduinoUnit.o
 
 MAIN: MAIN.o
