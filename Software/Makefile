@@ -6,7 +6,7 @@ CXX=g++
 CXXFLAGS= -g 
 CXXFLAGS+= -DF_CPU=8000000L -DARDUSIM -D__AVR_ATmega168P__
 CXXFLAGS+= -x c++
-INCLUDEDIRS= arduino/cores arduino/variants/standard include
+INCLUDEDIRS= arduino/cores arduino/variants/standard include $(ARDUINO_DIR)/ArduinoUnit/
 INCLUDES= $(patsubst %,-I$(ARDUINO_DIR)/%,$(INCLUDEDIRS))
 OBJS= $(ARDUINO_DIR)/*.o
 LDFLAGS=-lardusim -larduinounit
@@ -43,16 +43,16 @@ ardusim:
 
 arduinounit:
 	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
-	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
+	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) ArduinoUnitUtility/*.cpp
 	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 	ls -al $(ARDUINO_DIR)/ArduinoUnit/
 	cp arduinounit.a libarduinounit.a
 	nm -g -C libarduinounit.a
 
 MAIN: MAIN.o
-	$(CXX) -o main $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
+	$(CXX) -o main $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
 	
 MAIN.o:
-	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
+	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. TelescopeController.ino 
 	nm -g -C TelescopeController.o
 
