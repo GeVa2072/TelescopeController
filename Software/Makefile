@@ -27,11 +27,15 @@ fetch-arduinounit:
 	@wget https://github.com/GeVa2072/arduinounit/archive/master.zip
 	@unzip master.zip
 	@cp -r arduinounit-master/src/* $(ARDUINO_DIR)/ArduinoUnit/
+	@rm master.zip
+	@rm -rf arduinounit-master
 	
 fetch-ardusim:
 	@wget https://github.com/GeVa2072/ArduSim/archive/master.zip
 	@unzip master.zip
 	@cp -r ArduSim-master/* $(ARDUINO_DIR)
+	@rm master.zip
+	@rm -rf ArduSim-master
 
 check: ardusim arduinounit MAIN
 
