@@ -9,7 +9,7 @@ CXXFLAGS+= -x c++
 INCLUDEDIRS= arduino/cores arduino/variants/standard include
 INCLUDES= $(patsubst %,-I$(ARDUINO_DIR)/%,$(INCLUDEDIRS))
 OBJS= $(ARDUINO_DIR)/*.o
-LDFLAGS=-L $(ARDUINO_DIR)/main.o -L $(ARDUINO_DIR)/ArduinoUnit/
+LDFLAGS=-lardusim -larduinounit
 # -lardusim
 
 ifeq ($(OS),Windows_NT)
@@ -38,15 +38,17 @@ check: ardusim arduinounit MAIN
 ardusim:
 	@$(MAKE) -C $(ARDUINO_DIR)
 	ls -al $(ARDUINO_DIR)
+	cp $(ARDUINO_DIR)/ardusim.a $(ARDUINO_DIR)/libardusim.a
 
 arduinounit:
 	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
 	$(CXX) -c $(CXXFLAGS) -fpermissive $(LDFLAGS) $(INCLUDES) -I$(ARDUINO_DIR)/ArduinoUnit/ ArduinoUnitUtility/*.cpp
 	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 	ls -al $(ARDUINO_DIR)/ArduinoUnit/
+	cp $(ARDUINO_DIR)/ArduinoUnit/arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/libarduinounit.a
 
 MAIN: MAIN.o
-	$(CXX) -o main $(LDFLAGS) -L $(ARDUINO_DIR)/ardusim.a -L $(ARDUINO_DIR)/ArduinoUnit/arduinounit.a *.o
+	$(CXX) -o main $(LDFLAGS) -L $(ARDUINO_DIR)/libardusim.a -L $(ARDUINO_DIR)/ArduinoUnit/libarduinounit.a *.o
 	
 MAIN.o:
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. -I$(ARDUINO_DIR)/ArduinoUnit/ TelescopeController.ino 
