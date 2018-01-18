@@ -47,7 +47,10 @@ ardusim:
 
 arduinounit:
 	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
-	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -fpermissive ArduinoUnitUtility/*.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -fpermissive \
+	ArduinoUnitUtility/ArduinoUnit.cpp \
+	ArduinoUnitUtility/FakeStream.cpp \
+	ArduinoUnitUtility/FakeStreamBuffer.cpp
 	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
 	ls -al $(ARDUINO_DIR)/ArduinoUnit/
 	cp arduinounit.a libarduinounit.a
