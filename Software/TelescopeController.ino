@@ -22,5 +22,4 @@ void setup()
 void loop()
 {
   Test::run();
-  exit(0);
 }
