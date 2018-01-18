@@ -19,7 +19,7 @@ endif
 all: setup fetch check
 
 setup:
-	mkdir -p $(ARDUINO_DIR)/ArduinoUnit/
+	@mkdir -p $(ARDUINO_DIR)/ArduinoUnit/
 
 fetch: setup fetch-ardusim fetch-arduinounit
 
@@ -41,9 +41,6 @@ check: ardusim arduinounit MAIN
 
 ardusim:
 	@$(MAKE) -C $(ARDUINO_DIR)
-	ls -al $(ARDUINO_DIR)
-	cp $(ARDUINO_DIR)/ardusim.a $(ARDUINO_DIR)/libardusim.a
-	nm -g -C $(ARDUINO_DIR)/libardusim.a
 
 arduinounit:
 	@cd $(ARDUINO_DIR)/ArduinoUnit/ && \
@@ -51,15 +48,10 @@ arduinounit:
 	ArduinoUnitUtility/ArduinoUnit.cpp \
 	ArduinoUnitUtility/FakeStream.cpp \
 	ArduinoUnitUtility/FakeStreamBuffer.cpp
-	@$(AR) $(ARFLAGS) arduinounit.a $(ARDUINO_DIR)/ArduinoUnit/*.o
-	ls -al $(ARDUINO_DIR)/ArduinoUnit/
-	cp arduinounit.a libarduinounit.a
-	nm -g -C libarduinounit.a
 
 MAIN: MAIN.o
-	$(CXX) -o main $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
+	@$(CXX) -o main $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
 	
 MAIN.o:
-	$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. TelescopeController.ino 
-	nm -g -C TelescopeController.o
+	@$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. TelescopeController.ino 
 
