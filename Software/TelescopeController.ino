@@ -1,11 +1,17 @@
 #line 2 "TelescopeController.ino"
 #include <ArduinoUnit.h>
 
-test(simple1)
+test(correct)
 {
-  assertTrue(true);
+  int x=1;
+  assertEqual(x,1);
 }
 
+test(incorrect)
+{
+  int x=1;
+  assertNotEqual(x,1);
+}
 
 void setup()
 {
