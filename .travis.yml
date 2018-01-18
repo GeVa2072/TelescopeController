@@ -6,7 +6,7 @@ install:
   - ls -al 
   - ./main
 script:
-  - arduino --verify --board arduino:avr:nano:cpu=atmega168 $PWD/Software/TelescopeController.ino
+  - ./main
 notifications:
   email:
     on_success: change
