@@ -3,7 +3,7 @@ ARDUINO_DIR=${HOME}/ardusim
 AR=ar
 ARFLAGS=rcs
 CXX=g++
-CXXFLAGS= -g 
+CXXFLAGS= -Wall -g 
 CXXFLAGS+= -DF_CPU=8000000L -DARDUSIM -D__AVR_ATmega168P__
 CXXFLAGS+= -x c++
 INCLUDEDIRS= arduino/cores arduino/variants/standard include ArduinoUnit/
@@ -53,5 +53,6 @@ MAIN: MAIN.o
 	@$(CXX) -o main $(ARDUINO_DIR)/*.o $(ARDUINO_DIR)/ArduinoUnit/*.o *.o
 	
 MAIN.o:
+	@$(CXX) -E $(CXXFLAGS) $(INCLUDES) -I. TelescopeController.ino
 	@$(CXX) -c $(CXXFLAGS) $(INCLUDES) -I. TelescopeController.ino 
 
